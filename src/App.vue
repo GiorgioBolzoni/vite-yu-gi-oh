@@ -1,12 +1,14 @@
 <template>
     <HeaderComponent title="Yu-Gi-Oh Api"  />
-    <main v-for="(card, index) in store.cardList" :key="card.id" class="col-3 p-3">
+    <div class="row mt-5">
+      <main v-for="(card, index) in store.cardList" :key="index" class="col-3 p-3">
     <CardComponent 
-      :img="card.image_url_small"
+      :img="card.card_images.image_url"
       :name="card.name" 
       :archetype="card.archetype" 
     />
   </main>
+    </div>
 </template>
 
 
@@ -26,7 +28,7 @@ export default {
       store,
 
       params:{
-        num:20 ,
+        num: 20,
         offset: 0
       }
     }

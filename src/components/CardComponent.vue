@@ -1,9 +1,11 @@
 <template>
     <div class="row">
         <div class="col-2">
-            <figure><img :src="img" :alt="img"></figure>
+            <figure>
+                <img :src="card_images" alt="img">
+            </figure>
             <h3>{{ name }}</h3>
-            <h4>{{ archetype }}</h4>
+            <div>{{ archetype }}</div>
         </div>
     </div>
 </template>
@@ -13,7 +15,7 @@ import { store } from "../data/store";
 export default {
     name: 'CardComponent',
     props:{
-        img: String,
+        card_images: String,
         name: String,
         archetype: String,
     },
