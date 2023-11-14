@@ -37,14 +37,13 @@ export default {
 <style lang="scss" scoped>
     .row{
         position: relative;
-        height: 500px;
+        height: 550px;
         background-color: #D48F38;
         align-items: center;
         justify-content: center;
     }
     figure{
         position: relative;
-        width: 300px;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -53,7 +52,6 @@ export default {
     img{
         display: block;
         width: 100%;
-        height: 350px;
     }
     .row{
         margin-bottom: 30px;
@@ -62,9 +60,7 @@ export default {
         color: white;
     }
     .card-img{
-        height: 320px;
         margin-top: 0;
         padding: 0;
-        margin-bottom: 50px;
     }
 </style>
