@@ -19,11 +19,16 @@ export default {
   name: 'App',
   components: {
     HeaderComponent,
-    CardComponent
+    CardComponent,
   },
   data() {
     return {
-      store
+      store,
+
+      params:{
+        num:20 ,
+        offset: 0
+      }
     }
   },
   methods: {
@@ -32,6 +37,10 @@ export default {
       axios.get(url).then((response) => {
         store.cardList = response.data.data;
       })
+      // .catch((error) => {
+      //   console.log(error)
+      //   this.store.error = error.message;
+      // })
     }
   },
   created() {
