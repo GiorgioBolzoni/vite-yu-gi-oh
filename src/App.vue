@@ -33,8 +33,9 @@ export default {
   },
   methods: {
     getCards() {
-      const url = store.apiUrl + store.endPoint.card;
-      axios.get(url).then((response) => {
+      const url = store.cardsUrl ;
+      // + store.endPoint.card;
+      axios.get(store.cardsUrl).then((response) => {
         store.cardList = response.data.data;
       })
       // .catch((error) => {
