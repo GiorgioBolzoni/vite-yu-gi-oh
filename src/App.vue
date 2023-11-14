@@ -1,9 +1,9 @@
 <template>
     <HeaderComponent title="Yu-Gi-Oh Api"  />
     <div class="row mt-5">
-      <main v-for="(card, index) in store.cardList" :key="index" class="col-3 p-3">
+      <main v-for="(card, index) in store.cardList" :key="index" class="col-2 p-3">
     <CardComponent 
-      :img="card.card_images.image_url"
+      :card_images="card.card_images[0].image_url"
       :name="card.name" 
       :archetype="card.archetype" 
     />
@@ -37,7 +37,7 @@ export default {
     getCards() {
       const url = store.cardsUrl ;
       // + store.endPoint.card;
-      axios.get(store.cardsUrl).then((response) => {
+      axios.get(store.cardsUrl, {params: this.params}).then((response) => {
         store.cardList = response.data.data;
       })
       // .catch((error) => {
