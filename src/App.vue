@@ -42,7 +42,7 @@ export default {
     setParams(search) {
       console.log(search);
       if (search) {
-        this.params.archetype =  search
+        this.params.archetype =  search.archetype
         
       } else {
         this.params = null;
@@ -56,10 +56,7 @@ export default {
       axios.get(store.cardsUrl, {params: this.params}).then((response) => {
         store.cardList = response.data.data;
       })
-      // .catch((error) => {
-      //   console.log(error)
-      //   this.store.error = error.message;
-      // })
+      
     },
     getArchetype(){
       const archUrl = store.archetypeUrl;
@@ -75,13 +72,7 @@ export default {
     this.getCards();
     this.getArchetype();
 
-    // function getArchetype(){
-    //   return axios.get(url);
-    // }
-    // Promise.all([getCards(), getArchetype()]).then(function (results) {
-    //   const cardList = results[0];
-    //   const archetypeList = results[1];
-    // });
+
   }
 }
 </script>
